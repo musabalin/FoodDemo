@@ -1,0 +1,38 @@
+﻿@model CoreAndFood.Data.Models.Category
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "CategoryGet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>CategoryGet</h1>
+
+@using (Html.BeginForm("CategoryUpdate", "Category", FormMethod.Post))
+    {
+        <b>Category ID:</b>
+        <br />
+        @Html.TextBoxFor(x => x.CategoryID, new { @class = "form-control" })
+        <b>Category Name:</b>
+        <br />
+        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+        <br />
+        <b>Description:</b>
+        @Html.TextBoxFor(x => x.CategoryDescription, new { @class = "form-control" })
+        <br />
+
+        <button class="btn btn-success">Update</button>
+    }
+
+@*<form action="/" asp-action="CategoryUpdate" asp-controller="Category" method="post">
+    <label asp-for="CategoryID"></label>
+    <input asp-for="CategoryID" type="text" /><br />
+    <label asp-for="CategoryName"></label>
+    <input asp-for="CategoryName" type="text" /><br />
+    <label asp-for="CategoryDescription"></label>
+    <input asp-for="CategoryDescription" type="text" /><br />
+    <button class="btn btn-success">Update</button>
+
+
+</form>*@
+
+

@@ -1,0 +1,30 @@
+﻿@model CoreAndFood.Data.Models.Category
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "CategoryAdd";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>CategoryAdd</h1>
+<br />
+@*@using (Html.BeginForm("CategoryAdd", "Category", FormMethod.Post))
+{
+    <b>Category Name:</b>
+    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CategoryName, "", new { @style = "color:red" })
+    <br />
+    <b>Category Description:</b>
+    @Html.TextBoxFor(x => x.CategoryDescription, new { @class = "form-control" })
+    <br />
+    <button>Save</button>
+}*@
+
+<form asp-action="CategoryAdd" asp-controller="Category" method="post">
+    <b>Category Name:</b><br />
+    <input type="text" asp-for="CategoryName" class="form-control" /><br />
+    <b>Description:</b><br />
+    <input type="text" asp-for="CategoryDescription" class="form-control" /><br />
+  
+    <button class="btn btn-info">Save</button>
+</form>
+

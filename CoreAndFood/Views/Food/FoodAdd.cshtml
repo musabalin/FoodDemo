@@ -1,0 +1,33 @@
+﻿@model CoreAndFood.Data.Models.Food
+@{
+    ViewData["Title"] = "FoodAdd";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>FoodAdd</h1>
+
+<br />
+@using (Html.BeginForm("FoodAdd", "Food", FormMethod.Post))
+{
+    <b>Category Name:</b>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+
+    <b>Stock:</b>
+    @Html.TextBoxFor(x => x.Stock, new { @class = "form-control" })
+    <br />
+    <b>Price:</b>
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+    <b>Image Url:</b>
+    @Html.TextBoxFor(x => x.ImgURL, new { @class = "form-control" })
+    <br />
+    <b>Category:</b>
+    @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.v1, new { @class = "form-control" })
+    <br />
+    <b>Category Description:</b>
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Save</button>
+}
+
