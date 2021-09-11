@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace CoreAndFood.Repositories
@@ -38,6 +39,11 @@ namespace CoreAndFood.Repositories
         public List<T> TList(string p)
         {
             return c.Set<T>().Include(p).ToList();
+        }
+        //Arama işlemleri için kullanılıyor
+        public List<T> List(Expression<Func<T, bool>> filter)
+        {
+            return c.Set<T>().Where(filter).ToList();
         }
     }
 }

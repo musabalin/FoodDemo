@@ -11,7 +11,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Core Musa Balın</title>
+    <title>Category Details</title>
     <!-- for-mobile-apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -48,13 +48,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
     <!-- header -->
     <div class="agileits_header">
+        <div class="w3l_offers">
+            <a href="products.html">Today's special Offers !</a>
+        </div>
         <div class="w3l_search">
             <form action="#" method="post">
                 <input type="text" name="Product" value="Search a product..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search a product...';}" required="">
                 <input type="submit" value=" ">
             </form>
         </div>
-        
+        <div class="product_list_header">
+            <form action="#" method="post" class="last">
+                <fieldset>
+                    <input type="hidden" name="cmd" value="_cart" />
+                    <input type="hidden" name="display" value="1" />
+                    <input type="submit" name="submit" value="View your cart" class="button" />
+                </fieldset>
+            </form>
+        </div>
         <div class="w3l_header_right">
             <ul>
                 <li class="dropdown profile_details_drop">
@@ -62,7 +73,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="mega-dropdown-menu">
                         <div class="w3ls_vegetables">
                             <ul class="dropdown-menu drp-mnu">
-                                <li><a href="/login/Index/">Login</a></li>
+                                <li><a href="login.html">Login</a></li>
+                                <li><a href="login.html">Sign Up</a></li>
                             </ul>
                         </div>
                     </div>
@@ -215,8 +227,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="top-brands">
         <div class="container">
             <h3>Brands</h3>
-            @RenderBody()
-            @await Component.InvokeAsync("FoodGetList")
+            @await Component.InvokeAsync("FoodListByCategory",new { id = ViewBag.x })
         </div>
     </div>
     <!-- //top-brands -->
@@ -241,7 +252,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- footer -->
     <div class="footer">
         <div class="container">
-       
+
             <div class="clearfix"> </div>
             <div class="agile_footer_grids">
                 <div class="col-md-3 w3_footer_grid agile_footer_grids_w3_footer">

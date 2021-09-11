@@ -14,5 +14,11 @@ namespace CoreAndFood.Controllers
         {
             return View();
         }
+        [AllowAnonymous]
+        public IActionResult CategoryDetails(int id)
+        {
+            ViewBag.x = id;
+            return View();
+        }
     }
 }
