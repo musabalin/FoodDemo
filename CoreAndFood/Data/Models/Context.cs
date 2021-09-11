@@ -13,6 +13,7 @@ namespace CoreAndFood.Data.Models
             optionsBuilder.UseSqlServer(@"Server=MUSA-BALIN\SQLEXPRESS;database=DboCoreFood;integrated security=true;");
         }
         public DbSet<Food> Foods { get; set; }
-        public DbSet<Category> Categories  { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Admin> Admins { get; set; }
     }
 }

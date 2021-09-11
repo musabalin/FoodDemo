@@ -1,0 +1,59 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Core And Food Admin Login Page</title>
+
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="~/login/css/style.css" type="text/css" media="all" />
+</head>
+
+<body>
+    <!-- login form -->
+    <section class="w3l-login-form">
+        <div id="form-section">
+            <div class="wrapper">
+
+                <!-- logo -->
+                <div class="logo">
+                    <a class="brand-logo" href="/Login/index">Admin Panel</a>
+                </div>
+                <!-- //logo -->
+                <!-- form -->
+                <div class="login-form">
+                    <form  class="login100-form validate-form"  actions="~/Login/Index/" method="post">
+                        <div class="form-fields d-grid">
+                            <input type="text" name="Username" placeholder="Username" />
+                            <input type="password" name="Password" placeholder="Password" />
+                        </div>
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+                <div class="logo">
+                    <a class="brand-logo" href="~/Food/Index/">Go Home</a>
+                </div>
+                <!-- //form -->
+                <!-- copyright -->
+                <div class="copy-right">
+                    <p>&copy; 2021 DemoProject Login Form. All rights reserved | Design by Musa Balın</p>
+                </div>
+                <!-- //copyright -->
+
+            </div>
+        </div>
+    </section>
+    <!-- /login form -->
+</body>
+
+</html>
