@@ -12,9 +12,12 @@ namespace CoreAndFood.Controllers
     public class CategoryController : Controller
     {
         CategoryRepository categoryRepository = new CategoryRepository();
-        public IActionResult Index()
+        public IActionResult Index(string p)
         {
-
+            if (!string.IsNullOrEmpty(p))
+            {
+                return View(categoryRepository.List(x => x.CategoryName == p);
+            }
             return View(categoryRepository.TList());
         }
         [HttpPost]

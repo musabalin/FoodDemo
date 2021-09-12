@@ -5,6 +5,15 @@
 }
 <h1>Category List</h1>
 <br />
+@using (Html.BeginForm())
+{
+    <p>
+        Category Name:@Html.TextBox("p")
+        <input type="submit" value="Find" class="btn btn-secondary" />
+    </p>
+}
+
+
 <table class="table table-bordered">
     <tr>
         <th>ID</th>
